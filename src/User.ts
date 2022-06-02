@@ -1,5 +1,3 @@
-import { randUser, randLongitude, randLatitude } from '@ngneat/falso'
-
 import { faker } from '@faker-js/faker'
 
 export class User {
@@ -10,13 +8,15 @@ export class User {
   }
 
   constructor() {
-    this.name = randUser().firstName
+    this.name = faker.name.firstName()
 
     this.location = {
-      lat: randLatitude(),
-      lng: randLongitude(),
+      lat: parseFloat(faker.address.latitude()),
+      lng: parseFloat(faker.address.longitude()),
     }
   }
 }
 
-const myHouse = faker.address.latitude
+const myHouse = new User()
+
+console.log(myHouse)
