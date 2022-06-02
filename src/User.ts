@@ -16,7 +16,3 @@ export class User {
     }
   }
 }
-
-const myHouse = new User()
-
-console.log(myHouse)

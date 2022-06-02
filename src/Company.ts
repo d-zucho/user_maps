@@ -1,15 +1,17 @@
-import { randCompanyName, randZipCode } from '@ngneat/falso'
+import { faker } from '@faker-js/faker'
 
 export class Company {
   companyName: string
   location: {
-    zipCode: number
+    lat: number
+    lng: number
   }
 
   constructor() {
-    this.companyName = randCompanyName()
+    this.companyName = faker.company.companyName()
     this.location = {
-      zipCode: parseFloat(randZipCode()),
+      lat: parseFloat(faker.address.latitude()),
+      lng: parseFloat(faker.address.longitude()),
     }
   }
 }
